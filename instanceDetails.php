@@ -80,27 +80,27 @@ foreach ($reservations as $reservation) {
         <div id="collapseNetwork" class="panel-collapse collapse">
           <div class="panel-body">
             <div>
-              <span>Server Name:</span>
+              <b><span>Server Name:</span></b>
               <?php echo $instance_id;?>
             </div>
             <div>
-              <span>State:</span>
+             <b><span>State:</span></b>
               <?php echo $state;?>
             </div>
             <div>
-              <span>Launch Time:</span>
+              <b><span>Launch Time:</span></b>
               <?php echo $launchtime;?>
             </div>
             <div>
-              <span>Instance Type:</span>
+             <b> <span>Instance Type:</span></b>
               <?php echo $instanceType;?>
             </div>
 	    <div>
-              <span>Hypervisor:</span>
+             <b><span>Hypervisor:</span></b>
               <?php echo $hypervisor;?>
             </div>
 	    <div>
-              <span>Public DNS Name:</span>
+             <b><span>Public DNS Name:</span></b>
               <?php echo $publicDnsName;?>
             </div>
        </div>
@@ -120,19 +120,19 @@ foreach ($reservations as $reservation) {
         <div id="collapseOne" class="panel-collapse collapse">
           <div class="panel-body">
             <div>
-              <span>Private IP Address:</span>
+              <b><span>Private IP Address:</span></b>
               <?php echo $privateIpAddress;?>
             </div>
             <div>
-              <span>Public IP Address:</span>
+              <b><span>Public IP Address:</span></b>
               <?php echo $publicIpAddress;?>
             </div>
             <div>
-              <span>Subnet Id:</span>
+              <b><span>Subnet Id:</span></b>
               <?php echo $subnetId;?>
             </div>
             <div>
-              <span>VPC Id:</span>
+              <b><span>VPC Id:</span></b>
               <?php echo $vpcId;?>
             </div>
        </div>
@@ -152,11 +152,11 @@ foreach ($reservations as $reservation) {
         <div id="collapseStorage" class="panel-collapse collapse">
           <div class="panel-body">
             <div>
-              <span>EBS Optimized:</span>
+              <b><span>EBS Optimized:</span></b>
               <?php echo $ebsOptimized;?>
             </div>
             <div>
-              <span>Root Device Type:</span>
+              <b><span>Root Device Type:</span></b>
               <?php echo $rootDeviceType;?>
             </div>
        </div>
