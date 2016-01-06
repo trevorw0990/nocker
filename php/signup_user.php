@@ -14,11 +14,4 @@ die('Error: ' . mysql_error());
 
 }
 
-if ($res){
-session_start();
-header( 'Location: /index.php' );
-}else{
-session_destroy();
-header( 'Location: /login.php' );
-}
 ?>
