@@ -15,9 +15,7 @@ require 'php/manage_users.php';
         </div>
 </h1>
 <div class="container">
-<div class="panel-body">
- <div class="table-responsive">
-  <table class="table table-hover">
+  <table class="table table-hover table-bordered" style="overflow: auto">
     <thead>
       <tr>
         <th>Username</th>
@@ -31,11 +29,11 @@ require 'php/manage_users.php';
           <?php while ($row = mysql_fetch_assoc($user_result)){?>
 	<tbody>
           <tr>
-            <td class="col-md-1"><?php echo $row["user_email"];?></td>
-            <td class="col-md-2"><?php echo $row["update_date"];?></td>
-            <td class="col-md-1"><?php echo $row["is_active"];?></td>
-            <td class="col-md-2"><?php echo $row["is_account_owner"];?></td>
-            <td class="col-md-1"><?php echo $row["is_admin"];?></td>
+            <td class=""><?php echo $row["user_email"];?></td>
+            <td class=""><?php echo $row["update_date"];?></td>
+            <td class=""><?php echo $row["is_active"];?></td>
+            <td class=""><?php echo $row["is_account_owner"];?></td>
+            <td class=""><?php echo $row["is_admin"];?></td>
 	    <td>
             <div class="btn-group <?php echo $incident_id;?>">
             <button type="button" class="btn btn-primary btn-sm dropdown-toggle fixed" data-toggle="dropdown">
@@ -64,8 +62,6 @@ require 'php/manage_users.php';
  </div>
  </div>
  </div>
- </div>
- </div>
 <div id="addUserModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -75,7 +71,7 @@ require 'php/manage_users.php';
         <h4 class="modal-title">Add User</h4>
       </div>
       <div class="modal-body">
-      <form class="form-signin" method="POST" action="php/signup_user.php">
+      <form class="form-signin" method="POST" action="php/add_user.php">
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>

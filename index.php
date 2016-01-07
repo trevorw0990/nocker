@@ -1,7 +1,6 @@
 <?php
 require 'php/nav.php';
 
-session_start();
 
 if(isset($_COOKIE['PHPSESSID']) && isset($_SESSION["sessionId"])){
 }else{
