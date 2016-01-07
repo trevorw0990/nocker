@@ -35,7 +35,7 @@ require 'php/manage_users.php';
             <td class=""><?php echo $row["is_account_owner"];?></td>
             <td class=""><?php echo $row["is_admin"];?></td>
 	    <td>
-            <div class="btn-group <?php echo $incident_id;?>">
+            <div class="btn-group">
             <button type="button" class="btn btn-primary btn-sm dropdown-toggle fixed" data-toggle="dropdown">
               <i class="glyphicon glyphicon-user"></i>  <span class="caret"></span>
             </button>

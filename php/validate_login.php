@@ -6,12 +6,17 @@ $user_query = "select user_email, is_active, user_password, company_id from user
 
 $user_result = mysql_query($user_query);
 
+while($row = mysql_fetch_assoc($user_result)){
+$company_id = $row["company_id"];
+}
+
 $res=mysql_num_rows($user_result);
 
 
 if ($res == "1"){
 session_start();
 $_SESSION["sessionId"]=$_POST["email"];
+$_SESSION["companyId"]=$company_id;
 header( 'Location: ../index.php' );
 }else{
 session_destroy();
