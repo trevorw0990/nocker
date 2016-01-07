@@ -5,9 +5,8 @@ require 'php/manage_users.php';
 <br>
 <div class="container-fluid">
  <h1 style="text-align: center;"class="page-header">Users</h1>
-</div>
  <div class="table-responsive">
-  <table class="table table-hover">
+  <table class="table table-hover span5">
     <thead>
       <tr>
         <th>Username</th>
@@ -16,6 +15,7 @@ require 'php/manage_users.php';
       </tr>
     </thead>
           <?php while ($row = mysql_fetch_assoc($user_result)){?>
+	<tbody>
           <tr>
             <td><?php echo $row["user_email"];?></td>
             <td><?php echo $row["is_active"];?></td>
@@ -24,13 +24,22 @@ require 'php/manage_users.php';
             <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
               <i class="glyphicon glyphicon-cog"></i>  <span class="caret"></span>
             </button>
+
+		<?php
+			if($row["is_active"] == 1){
+			    $toggle_enabled = "<li><a href=php/disableUser.php?email=$row[user_email]>Disable</a></li>";
+			}elseif($row["is_active"] == 0){
+			    $toggle_enabled = "<li><a href=php/enableUser.php?email=$row[user_email]>Enable</a></li>";
+			}
+		?>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="php/disableUser.php?email=<?php echo $row['user_email'];?>">Disable</a></li>
+              <?php echo $toggle_enabled;?>
               <li><a href="instanceDetails.php?instanceId=<?php echo $instance_id_match_found;?>">Change Password</a></li>
             </ul>
           </div>
 	   </td>
           </tr>
+	</tbody>
               <?php
             };
             ?>
