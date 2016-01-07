@@ -1,10 +1,10 @@
 <?php
 require 'php/nav.php';
 
-if(isset($_COOKIE['PHPSESSID'])){
+session_start();
 
-}
-else{
+if(isset($_COOKIE['PHPSESSID']) && isset($_SESSION["sessionId"])){
+}else{
     echo "Invalid Login";
     header( 'Location: /login.php' );
 }
