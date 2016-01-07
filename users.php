@@ -10,7 +10,9 @@ require 'php/manage_users.php';
     <thead>
       <tr>
         <th>Username</th>
+        <th>Last Update Date</th>
         <th>Is Active</th>
+        <th>Is Admin</th>
 	<th></th>
       </tr>
     </thead>
@@ -18,7 +20,9 @@ require 'php/manage_users.php';
 	<tbody>
           <tr>
             <td><?php echo $row["user_email"];?></td>
+            <td><?php echo $row["update_date"];?></td>
             <td><?php echo $row["is_active"];?></td>
+            <td><?php echo $row["is_admin"];?></td>
 	    <td>
             <div class="btn-group <?php echo $incident_id;?>">
             <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
