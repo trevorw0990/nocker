@@ -7,7 +7,7 @@ require 'php/manage_users.php';
  <h1 style="text-align: center;"class="page-header">Users</h1>
 </div>
  <div class="table-responsive">
-  <table class="table table-hover table-vcenter">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Username</th>
@@ -35,5 +35,7 @@ require 'php/manage_users.php';
             };
             ?>
     </table>
+ </div>
+ </div>
  </div>
 
