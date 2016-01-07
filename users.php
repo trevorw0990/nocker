@@ -15,7 +15,7 @@ require 'php/manage_users.php';
         </div>
 </h1>
 <div class="container">
-  <table class="table table-hover table-bordered" style="overflow: auto">
+  <table class="table table-hover" style="overflow: auto">
     <thead>
       <tr>
         <th>Username</th>
@@ -46,9 +46,17 @@ require 'php/manage_users.php';
 			}elseif($row["is_active"] == 0){
 			    $toggle_enabled = "<li><a href=php/enableUser.php?email=$row[user_email]>Enable</a></li>";
 			}
+			if($row["is_admin"] == 0){
+			    $toggle_admin = "<li><a href=php/enableAdmin.php?email=$row[user_email]>Make Administrator</a></li>";
+			}elseif($row["is_admin"] == 1 && $row["is_account_owner"] !=1){
+			    $toggle_admin = "<li><a href=php/disableAdmin.php?email=$row[user_email]>Revoke Administrator</a></li>";	
+			}else{
+			    $toggle_admin = " ";	
+			}
 		?>
             <ul class="dropdown-menu" role="menu">
               <?php echo $toggle_enabled;?>
+	      <?php echo $toggle_admin;?>
               <li><a href="instanceDetails.php?instanceId=<?php ?>">Change Password</a></li>
             </ul>
           </div>
