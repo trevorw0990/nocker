@@ -1,5 +1,29 @@
 <?php
 
+session_start();
+
+require 'dbConnection.php';
+
+
+
+$query_user = "select is_admin from user where user_email='$_SESSION[sessionId]' and is_admin='1'";
+$result_user = mysql_query($query_user);
+$toggle_user_privileges = mysql_num_rows($result_user); 
+if ($toggle_user_privileges == "1"){
+$toggle_user_admin = '<ul class="nav navbar-nav">
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+      <li><a href="users.php">Manage Users</a></li>
+      <li><a href="security.php">Security</a></li>
+      <li><a href="configuration.php">Configuration</a></li>
+      <li><a href="payments.php">Payments</a></li>
+    </ul>
+  </li>
+</ul>';
+}else{
+$toggle_user_admin = " ";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,17 +85,9 @@
           </ul>
         </li>
       </ul>
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="users.php">Manage Users</a></li>
-            <li><a href="security.php">Security</a></li>
-            <li><a href="configuration.php">Configuration</a></li>
-            <li><a href="payments.php">Payments</a></li>
-          </ul>
-        </li>
-      </ul>
+     <?php
+	echo $toggle_user_admin; 
+     ?>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
