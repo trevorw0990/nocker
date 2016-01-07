@@ -4,7 +4,11 @@ session_start();
 
 require 'dbConnection.php';
 
+if(isset($_SESSION['companyId']) && isset($_SESSION['sessionId'])){
 
+}else{
+header("Location: ../login.php");
+}
 
 $query_user = "select is_admin from user where user_email='$_SESSION[sessionId]' and is_admin='1'";
 $result_user = mysql_query($query_user);
@@ -54,7 +58,7 @@ $toggle_user_admin = " ";
       </button>
     </div>
     <a class="navbar-brand" href="index.php">
-        <img alt="Brand" src="images/iiq.png" height=30px width=100px>
+        <img alt="Brand" src="images/logo.png" height=45px width=100px>
       </a>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
