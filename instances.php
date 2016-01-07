@@ -50,8 +50,6 @@ foreach ($reservations as $reservation) {
 <?php
 }
 }
-?>
-<?php
 }
 }
 ?>
