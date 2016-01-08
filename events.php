@@ -1,8 +1,24 @@
 <?php
 require 'php/nav.php';
+require 'php/dbConnection.php';
+session_start();
+
+$query_pd_creds = "select pd_api_key, pd_master_user_id from company where company_id='$_SESSION[companyId]'";
+$result_pd_creds = mysql_query($query_pd_creds);
+
+while($row = mysql_fetch_assoc($result_pd_creds)){
+if($row['pd_master_user_id'] == null || $row['pd_api_key'] == null){
+echo "<script>alert(Credentials missing)</script>";
+}else{
+$requester_id = $row['pd_master_user_id'];
+$api_token = $row['pd_api_key'];
+}
+}
+
+
 $service_url = "https://rntls.pagerduty.com/api/v1/incidents";
 //header
-$auth        = 'Authorization: Token token=AV3xfZsHNCfTVqskCWyW';
+$auth        = 'Authorization: Token token='."$api_token";
 $method      = 'GET';
 
 // curl init

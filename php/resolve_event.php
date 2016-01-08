@@ -1,14 +1,28 @@
 <?php
+
+session_start();
+
+$query_pd_creds = "select pd_api_key, pd_master_user_id from customer where customer_id='$_SESSION[companyId]'";
+$result_pd_creds = mysql_query($query_pd_creds);
+
+while($row = mysql_fetch_assoc($result_pd_creds)){
+if($row['pd_master_user_id'] == null || $row['pd_api_key'] == null){
+echo "<script>alert(Credentials missing)</script>";
+}else{
+$requester_id = $row['pd_master_user_id'];
+$api_token = $row['pd_api_key'];
+}
+}
+
 $incident_id = $_GET['incident_id'];
 $service_url = "https://rntls.pagerduty.com/api/v1/incidents/$incident_id/resolve";
 
-
-$data = array('requester_id'=>'PGD50L1');
+$data = array('requester_id'=>$requester_id);
 $data_json = json_encode($data);
 
 $chlead = curl_init();
 curl_setopt($chlead, CURLOPT_URL, $service_url);
-curl_setopt($chlead, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Token token=AV3xfZsHNCfTVqskCWyW' ));
+curl_setopt($chlead, CURLOPT_HTTPHEADER, array('Content-Type: application/json', "Authorization: Token token=$api_token" ));
 curl_setopt($chlead, CURLOPT_VERBOSE, 1);
 curl_setopt($chlead, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($chlead, CURLOPT_CUSTOMREQUEST, "PUT"); 
