@@ -14,7 +14,9 @@ $result_creds = mysql_query($query_creds);
 
 while($row = mysql_fetch_assoc($result_creds)){
 if($row['aws_access_id'] == null || $row['aws_secret_id'] == null){
-echo "<script>alert(Credentials missing)</script>";
+echo "<script>alert('Could Not Load AWS Configuration')
+window.location.href='configuration.php';
+</script>";
 }else{
 $key = $row['aws_access_id'];
 $secret = $row['aws_secret_id'];

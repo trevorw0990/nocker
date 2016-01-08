@@ -28,8 +28,6 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
-    </div>
-   <div class="container">
     <form class="form-signin" method="GET" action="signup.php">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>

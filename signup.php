@@ -16,7 +16,7 @@
       <form class="form-signin" method="POST" action="php/check_company.php">
         <h3 class="form-signin-heading">Complete the following steps to sign up</h3>
         <label for="companyId" class="sr-only">Company Id</label>
-        <input type="companyId" name="companyId" id="companyId" class="form-control" placeholder="Company Identifier" required autofocus>
+        <input type="companyId" name="companyId" id="companyId" class="form-control" placeholder="Unique Company Identifier" required autofocus>
         <button class="btn btn-lg btn-success btn-block" type="submit">Next</button>
       </form>
     </div>

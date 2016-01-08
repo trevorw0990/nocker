@@ -8,7 +8,9 @@ $result_pd_creds = mysql_query($query_pd_creds);
 
 while($row = mysql_fetch_assoc($result_pd_creds)){
 if($row['pd_master_user_id'] == null || $row['pd_api_key'] == null){
-echo "<script>alert(Credentials missing)</script>";
+echo "<script>alert('Could Not Load PagerDuty Configuration')
+window.location.href='configuration.php';
+</script>";
 }else{
 $requester_id = $row['pd_master_user_id'];
 $api_token = $row['pd_api_key'];
@@ -95,6 +97,7 @@ if($_GET['unresolved'] == true && $status != 'resolved'){
             </button>
             <ul class="dropdown-menu" role="menu">
               <li><a href="instanceDetails.php?instanceId=<?php echo $instance_id_match_found;?>">Investigate</a></li>
+	      <li><a href="tel:401-283-6057">Start Conference Bridge</a></li>
               <li onclick="return confirm('Resolve Event?')"><a href="php/resolve_event.php?incident_id=<?php echo $incident_id;?>">Resolve</a></li>
             </ul>
           </div>
@@ -150,6 +153,7 @@ if($_GET['unresolved'] == true && $status != 'resolved'){
             </button>
             <ul class="dropdown-menu" role="menu">
               <li><a href="instanceDetails.php?instanceId=<?php echo $instance_id_match_found;?>">Investigate</a></li>
+              <li><a href="tel:401-283-6057">Start Conference Bridge</a></li>
               <li onclick="return confirm('Resolve Event?')"><a href="php/resolve_event.php?incident_id=<?php echo $incident_id;?>">Resolve</a></li>
             </ul>
           </div>

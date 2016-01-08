@@ -19,7 +19,6 @@ $toggle_user_admin = '<ul class="nav navbar-nav">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator<span class="caret"></span></a>
     <ul class="dropdown-menu">
       <li><a href="users.php">Manage Users</a></li>
-      <li><a href="security.php">Security</a></li>
       <li><a href="configuration.php">Configuration</a></li>
     </ul>
   </li>
@@ -83,8 +82,8 @@ $toggle_user_admin = " ";
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="analyze.php">Incident Management</a></li>
-            <li><a href="analyze.php">Infrastructure Uptime</a></li>
+            <li><a href="analyze.php">Incident Analysis</a></li>
+            <li><a href="analyze.php">Infrastructure Analysis</a></li>
           </ul>
         </li>
       </ul>
