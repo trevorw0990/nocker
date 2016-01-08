@@ -1,8 +1,8 @@
 <?php
 require 'php/nav.php';
-$service_url = "https://iiq-consulting-llc.pagerduty.com/api/v1/incidents";
+$service_url = "https://rntls.pagerduty.com/api/v1/incidents";
 //header
-$auth        = 'Authorization: Token token=cdY2VoFkhVzGKkCcPopw';
+$auth        = 'Authorization: Token token=AV3xfZsHNCfTVqskCWyW';
 $method      = 'GET';
 
 // curl init

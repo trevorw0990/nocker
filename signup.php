@@ -11,22 +11,13 @@
   <link href="css/signin.css" rel="stylesheet">
 </head>
   <body>
-    <img src="images/iiq.png" alt="IIQ Logo" class="img-responsive center-block" />
+    <img src="images/logo.png" alt="IIQ Logo" class="img-responsive center-block" />
     <div class="container">
-      <form class="form-signin" method="POST" action="php/signup_user.php">
-        <h3 class="form-signin-heading">Complete the following to sign up</h3>
+      <form class="form-signin" method="POST" action="php/check_company.php">
+        <h3 class="form-signin-heading">Complete the following steps to sign up</h3>
         <label for="companyId" class="sr-only">Company Id</label>
         <input type="companyId" name="companyId" id="companyId" class="form-control" placeholder="Company Identifier" required autofocus>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Next</button>
       </form>
     </div>
   </body>

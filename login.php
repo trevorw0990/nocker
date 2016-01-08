@@ -11,7 +11,7 @@
   <link href="css/signin.css" rel="stylesheet">
 </head>
   <body>
-    <img src="images/iiq.png" alt="IIQ Logo" class="img-responsive center-block" />
+    <img src="images/logo.png" alt="IIQ Logo" class="img-responsive center-block" />
     <div class="container">
       <form class="form-signin" method="POST" action="php/validate_login.php">
         <h2 class="form-signin-heading">Please sign in</h2>

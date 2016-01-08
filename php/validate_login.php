@@ -8,6 +8,7 @@ $user_result = mysql_query($user_query);
 
 while($row = mysql_fetch_assoc($user_result)){
 $company_id = $row["company_id"];
+$is_admin = $row["is_admin"];
 }
 
 $res=mysql_num_rows($user_result);
@@ -17,6 +18,7 @@ if ($res == "1"){
 session_start();
 $_SESSION["sessionId"]=$_POST["email"];
 $_SESSION["companyId"]=$company_id;
+$_SESSION["is_admin"]=$is_admin;
 header( 'Location: ../index.php' );
 }else{
 session_destroy();

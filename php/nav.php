@@ -21,7 +21,6 @@ $toggle_user_admin = '<ul class="nav navbar-nav">
       <li><a href="users.php">Manage Users</a></li>
       <li><a href="security.php">Security</a></li>
       <li><a href="configuration.php">Configuration</a></li>
-      <li><a href="payments.php">Payments</a></li>
     </ul>
   </li>
 </ul>';

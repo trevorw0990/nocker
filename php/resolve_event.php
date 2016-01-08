@@ -1,14 +1,14 @@
 <?php
 $incident_id = $_GET['incident_id'];
-$service_url = "https://iiq-consulting-llc.pagerduty.com/api/v1/incidents/$incident_id/resolve";
+$service_url = "https://rntls.pagerduty.com/api/v1/incidents/$incident_id/resolve";
 
 
-$data = array('requester_id'=>'PXTCUDQ');
+$data = array('requester_id'=>'PGD50L1');
 $data_json = json_encode($data);
 
 $chlead = curl_init();
 curl_setopt($chlead, CURLOPT_URL, $service_url);
-curl_setopt($chlead, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Token token=cdY2VoFkhVzGKkCcPopw' ));
+curl_setopt($chlead, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: Token token=AV3xfZsHNCfTVqskCWyW' ));
 curl_setopt($chlead, CURLOPT_VERBOSE, 1);
 curl_setopt($chlead, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($chlead, CURLOPT_CUSTOMREQUEST, "PUT"); 
